@@ -1,0 +1,26 @@
+.home-container{
+    background: radial-gradient(circle, #ffcc00, #ff6600, #ff3300);
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sub-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+
+}
+.sub-container > li {
+    margin: 0 10px;
+}
+.job-button{
+    background-color: blue;
+    color:white;
+    border-radius: 20px;
+    width:150px;
+    height:30px;
+    align-items: center;
+}

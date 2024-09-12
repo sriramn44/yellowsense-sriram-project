@@ -1,0 +1,16 @@
+.jobcard-container{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    place-items: center;
+    align-items: center;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding:25px;
+    text-align: center;
+}
+

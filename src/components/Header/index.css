@@ -1,0 +1,14 @@
+.divcontainer{
+    height:5vh;
+    background-color: #64656c;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.nav-container{
+    justify-content: space-around;
+    color:black;
+
+
+}

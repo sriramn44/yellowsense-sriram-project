@@ -1,0 +1,21 @@
+.bookmarks-container{
+    background: radial-gradient(circle, #ffcc00, #7eebf5, #eff383);
+    height:100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bookmark-item{
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding:20px;
+    text-align: center;
+}
