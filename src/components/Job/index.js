@@ -1,5 +1,5 @@
 // src/components/Jobs.js
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import {ThreeDots} from 'react-loader-spinner'
 
 import Jobcard from '../Jobcard';
@@ -10,7 +10,7 @@ const Job = () => {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const loadJobs = useCallback(async () => {
+  const loadJobs = async () => {
     setIsLoading(true);
     try {
       const response = await fetch(`https://testapi.getlokalapp.com/common/jobs?page=${page}`);
@@ -23,23 +23,24 @@ const Job = () => {
     } finally {
       setIsLoading(false);
     }
-  }, []); 
+  }; 
 
-  const handleScroll = useCallback(() => {
+  const handleScroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500 && !isLoading) {
       setPage(prevPage => prevPage + 1);
     }
-  }, []); 
+  };
 
   useEffect(() => {
-    loadJobs();  
-    window.addEventListener('scroll', handleScroll);  
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [loadJobs, handleScroll]); 
+    loadJobs();
+  }, [page]);
 
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isLoading]);
+  
 
   return (
     <div className="job-container">
