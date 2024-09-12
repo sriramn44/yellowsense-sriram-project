@@ -28,7 +28,7 @@ const JobDetails = () => {
     };
 
     fetchJobs();
-  }, []); // Empty dependency array to run this effect once on component mount
+  }, []);
 
   const job = jobs.find((job) => job.id === Number(id));
 
@@ -39,7 +39,7 @@ const JobDetails = () => {
   }
 
   if (error) {
-    return <p className='jobdetails-container'>Error fetching jobs: {error}</p>;  // Show error state
+    return <p className='jobdetails-container'>Error fetching jobs: {error}</p>; 
   }
 
 
@@ -48,9 +48,9 @@ const JobDetails = () => {
   }
 
     const formatDate = (dateString) => {
-      if (!dateString) return 'N/A';  // Return 'N/A' if date is missing
+      if (!dateString) return 'N/A'; 
       const date = new Date(dateString);
-      return isNaN(date.getTime()) ? 'N/A' : date.toLocaleString();  // Format date or return 'N/A'
+      return isNaN(date.getTime()) ? 'N/A' : date.toLocaleString(); 
     };
 
   return (

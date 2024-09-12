@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import "./index.css"
 
 const Header = () => {
-  const navigate = useNavigate();  // For back button
+  const navigate = useNavigate();
 
   return (
     <header className='divcontainer'>

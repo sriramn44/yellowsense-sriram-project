@@ -2,16 +2,13 @@ import React, { useState, useEffect } from 'react';
 import "./bookmark.css"
 
 const Bookmarks = () => {
-    // Initialize state to store bookmarked jobs
     const [bookmarks, setBookmarks] = useState([]);
 
-    // Fetch bookmarks from localStorage on component mount
     useEffect(() => {
         const savedBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
         setBookmarks(savedBookmarks);
     }, []);
 
-    // Remove bookmark handler
     const removeBookmark = (id) => {
         const updatedBookmarks = bookmarks.filter(job => job.id !== id);
         setBookmarks(updatedBookmarks);
